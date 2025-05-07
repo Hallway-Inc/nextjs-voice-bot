@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Script from 'next/script';
 import { useEffect } from 'react';
 
 interface OutgoingMessage {
@@ -21,9 +22,11 @@ export default function Footer({ includeEmbed = false }: FooterProps) {
 
 		// Message handler for iframe communication
 		const messageHandler = (event: MessageEvent) => {
+      console.log("messageHandler", event);
 			// Type guard to ensure event.data has the expected structure
 			if (event.data && typeof event.data === "object") {
 				const data = event.data as OutgoingMessage;
+        console.log(data)
 
 				if (data.type === "url") {
 					if (data.openInNewTab) {
@@ -52,7 +55,7 @@ export default function Footer({ includeEmbed = false }: FooterProps) {
           {/* @ts-expect-error */}
           <hallway-embed
             character-id="7394103e-ba65-41d8-ac98-a43348cee84f"
-						custom-navigation
+						custom-navigation="true"
           />
           <script src="https://hallway.ai/embed-loader.js" async type="text/javascript"></script>
         </>
