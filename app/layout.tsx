@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
-        {/* @ts-expect-error */}
-        <hallway-embed character-id="7394103e-ba65-41d8-ac98-a43348cee84f"></hallway-embed>
-        <script src="https://hallway.ai/embed-loader.js" async type="text/javascript"></script>
+        <Footer includeEmbed={true} />
       </body>
     </html>
   );
