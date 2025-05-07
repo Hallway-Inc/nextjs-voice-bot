@@ -30,6 +30,9 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        {/* @ts-expect-error */}
+        <hallway-embed character-id="7394103e-ba65-41d8-ac98-a43348cee84f"></hallway-embed>
+        <script src="https://hallway.ai/embed-loader.js" async type="text/javascript"></script>
       </body>
     </html>
   );

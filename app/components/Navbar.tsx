@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
   const pages = [
+    { name: 'Home', path: '/' },
     { name: 'Red', path: '/red' },
     { name: 'Blue', path: '/blue' },
     { name: 'Green', path: '/green' },
